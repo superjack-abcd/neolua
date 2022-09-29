@@ -1,0 +1,142 @@
+Test: function foo (a)
+	print("foo", a)
+	return coroutine.yield(2*a)
+end
+     
+co = coroutine.create(function (a,b)
+    print("co-body", a, b)
+    local r = foo(a+1)
+    print("co-body", r)
+    local r, s = coroutine.yield(a+b, a-b)
+    print("co-body", r, s)
+    return b, "end"
+end)
+     
+print("main", coroutine.resume(co, 1, 10))
+print("main", coroutine.resume(co, "r"))
+print("main", coroutine.resume(co, "x", "y"))
+print("main", coroutine.resume(co, "x", "y"))
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Dynamic SetMember foo(
+            (System.Object)$_G,
+            (System.Object).Lambda foo<System.Func`2[System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember co(
+            (System.Object)$_G,
+            (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                    .Dynamic GetMember create(.Dynamic GetMember coroutine((System.Object)$_G)),
+                    (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>))).Item[0]);
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"main",
+            (System.Object).New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                    .Dynamic GetMember resume(.Dynamic GetMember coroutine((System.Object)$_G)),
+                    .Dynamic GetMember co((System.Object)$_G),
+                    (System.Object)1,
+                    (System.Object)10)));
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"main",
+            (System.Object).New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                    .Dynamic GetMember resume(.Dynamic GetMember coroutine((System.Object)$_G)),
+                    .Dynamic GetMember co((System.Object)$_G),
+                    (System.Object)"r")));
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"main",
+            (System.Object).New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                    .Dynamic GetMember resume(.Dynamic GetMember coroutine((System.Object)$_G)),
+                    .Dynamic GetMember co((System.Object)$_G),
+                    (System.Object)"x",
+                    (System.Object)"y")));
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"main",
+            (System.Object).New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                    .Dynamic GetMember resume(.Dynamic GetMember coroutine((System.Object)$_G)),
+                    .Dynamic GetMember co((System.Object)$_G),
+                    (System.Object)"x",
+                    (System.Object)"y")));
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda foo<System.Func`2[System.Object,Neo.IronLua.LuaResult]>(System.Object $a) {
+    .Block() {
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"foo",
+            $a);
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                .Dynamic GetMember yield(.Dynamic GetMember coroutine((System.Object)$_G)),
+                .Dynamic BinaryOperation Multiply(
+                    (System.Object)2,
+                    $a))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $a,
+    System.Object $b) {
+    .Block(
+        System.Object $r,
+        System.Object $s) {
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"co-body",
+            $a,
+            $b);
+        $r = (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                .Dynamic GetMember foo((System.Object)$_G),
+                .Dynamic BinaryOperation Add(
+                    $a,
+                    (System.Object)1)))).Item[0];
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"co-body",
+            $r);
+        .Block(Neo.IronLua.LuaResult $var1) {
+            $var1 = .New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                    .Dynamic GetMember yield(.Dynamic GetMember coroutine((System.Object)$_G)),
+                    .Dynamic BinaryOperation Add(
+                        $a,
+                        $b),
+                    .Dynamic BinaryOperation Subtract(
+                        $a,
+                        $b)));
+            $r = $var1.Item[0];
+            $s = $var1.Item[1]
+        };
+        .Dynamic Invoke(
+            .Dynamic GetMember print((System.Object)$_G),
+            (System.Object)"co-body",
+            $r,
+            $s);
+        .Goto #return { .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                (System.Object)$b,
+                (System.Object)"end"
+            }) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+co-body 1 10
+foo 2
+main True 4
+co-body r
+main True 11 -9
+co-body x y
+main True 10 end
+main False cannot resume dead coroutine
+OK: no result == no result
+  Dauer: 22ms
+
+

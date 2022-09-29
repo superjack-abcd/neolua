@@ -1,0 +1,120 @@
+Test: local sum = 0;
+for c in 
+	function(s, v)
+		if v == 0 then
+			return 1;
+		elseif v == 1 then 
+			return 20; 
+		elseif v == 20 then
+			return 300;
+		elseif v == 300 then
+			return 4000;
+		else
+			return nil;
+		end;
+	end, nil, 0 do
+
+	sum = sum + c;
+end;
+return sum;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block(System.Object $sum) {
+        $sum = (System.Object)0;
+        .Block(
+            Neo.IronLua.LuaResult $#tmp,
+            System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult] $#f,
+            System.Object $#s,
+            System.Object $#var) {
+            $#tmp = .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                    (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>,
+                    (System.Object)null,
+                    (System.Object)0
+                });
+            $#f = .Dynamic Convert System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]($#tmp.Item[0]);
+            $#s = $#tmp.Item[1];
+            $#var = $#tmp.Item[2];
+            .Label
+            .LabelTarget #continue:;
+            $#tmp = .Invoke $#f(
+                $#s,
+                $#var);
+            $#var = $#tmp.Item[0];
+            .If ($#var == null) {
+                .Goto #break { }
+            } .Else {
+                .Block(System.Object $c) {
+                    $c = $#tmp.Item[0];
+                    $sum = .Dynamic BinaryOperation Add(
+                        $sum,
+                        $c)
+                }
+            };
+            .Goto #continue { };
+            .Label
+            .LabelTarget #break:
+        };
+        .Goto #return { .New Neo.IronLua.LuaResult($sum) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $s,
+    System.Object $v) {
+    .Block() {
+        .If (
+            .Dynamic Convert System.Boolean(.Dynamic BinaryOperation Equal(
+                    $v,
+                    (System.Object)0))
+        ) {
+            .Block() {
+                .Goto #return { .New Neo.IronLua.LuaResult((System.Object)1) }
+            }
+        } .Else {
+            .If (
+                .Dynamic Convert System.Boolean(.Dynamic BinaryOperation Equal(
+                        $v,
+                        (System.Object)1))
+            ) {
+                .Block() {
+                    .Goto #return { .New Neo.IronLua.LuaResult((System.Object)20) }
+                }
+            } .Else {
+                .If (
+                    .Dynamic Convert System.Boolean(.Dynamic BinaryOperation Equal(
+                            $v,
+                            (System.Object)20))
+                ) {
+                    .Block() {
+                        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)300) }
+                    }
+                } .Else {
+                    .If (
+                        .Dynamic Convert System.Boolean(.Dynamic BinaryOperation Equal(
+                                $v,
+                                (System.Object)300))
+                    ) {
+                        .Block() {
+                            .Goto #return { .New Neo.IronLua.LuaResult((System.Object)4000) }
+                        }
+                    } .Else {
+                        .Block() {
+                            .Goto #return { .New Neo.IronLua.LuaResult(null) }
+                        }
+                    }
+                }
+            }
+        };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)4321 == (Int32)4321
+  Dauer: 3ms
+
+

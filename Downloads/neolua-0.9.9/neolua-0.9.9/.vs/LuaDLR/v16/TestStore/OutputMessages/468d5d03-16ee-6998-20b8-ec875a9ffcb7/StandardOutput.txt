@@ -1,0 +1,173 @@
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block(System.Object $l) {
+        $l = .Dynamic Convert System.Object((System.Object).Block(Neo.IronLua.LuaTable $#table) {
+                $#table = .New Neo.IronLua.LuaTable();
+                .Call $#table.SetMemberValue(
+                    "add",
+                    (System.Object)100,
+                    False,
+                    False);
+                .Call $#table.SetMemberValue(
+                    "a",
+                    (System.Object).Lambda lambda<System.Func`2[System.Object,Neo.IronLua.LuaResult]>,
+                    False,
+                    False);
+                .Call $#table.SetMemberValue(
+                    "c",
+                    (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>,
+                    False,
+                    False);
+                $#table
+            });
+        .Call (.Dynamic Convert Neo.IronLua.LuaTable($l)).DefineMethodLight(
+            "b",
+            (System.Delegate).Lambda b<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember test(
+            (System.Object)$_G,
+            (System.Object).Lambda test<System.Func`2[System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember b(
+            (System.Object)$_G,
+            $l);
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`2[System.Object,Neo.IronLua.LuaResult]>(System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Multiply(
+                $a,
+                (System.Object)4)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $self,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Add(
+                .Dynamic GetMember add($self),
+                .Dynamic BinaryOperation Multiply(
+                    $a,
+                    (System.Object)2))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda b<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $self,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Add(
+                .Dynamic GetMember add($self),
+                .Dynamic BinaryOperation Multiply(
+                    $a,
+                    (System.Object)3))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda test<System.Func`2[System.Object,Neo.IronLua.LuaResult]>(System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Multiply(
+                $a,
+                (System.Object)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)4 == (Int32)4
+OK: (Int32)4 == (Int32)4
+OK: (Int32)20 == (Int32)20
+OK: (Int32)115 == (Int32)115
+OK: (Int32)110 == (Int32)110
+OK: (Int32)10 == (Int32)10
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                .Dynamic GetMember a(.Dynamic GetMember b((System.Object)$_G)),
+                (System.Object)5)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)20 == (Int32)20
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Call b(
+                .Dynamic GetMember b((System.Object)$_G),
+                (System.Object)5)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)115 == (Int32)115
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                .Dynamic GetMember b(.Dynamic GetMember b((System.Object)$_G)),
+                .Dynamic GetMember b((System.Object)$_G),
+                (System.Object)5)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)115 == (Int32)115
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Call c(
+                .Dynamic GetMember b((System.Object)$_G),
+                (System.Object)5)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)110 == (Int32)110
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                .Dynamic GetMember c(.Dynamic GetMember b((System.Object)$_G)),
+                .Dynamic GetMember b((System.Object)$_G),
+                (System.Object)5)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)110 == (Int32)110
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                .Dynamic GetMember test((System.Object)$_G),
+                (System.Object)5)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)10 == (Int32)10
+
+
+Debug Trace:
+C# Binders:
+Lua Binders:

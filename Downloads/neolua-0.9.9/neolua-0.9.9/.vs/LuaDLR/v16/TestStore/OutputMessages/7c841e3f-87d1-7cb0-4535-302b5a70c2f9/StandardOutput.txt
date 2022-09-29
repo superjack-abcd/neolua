@@ -1,0 +1,111 @@
+Test: tm = {}
+tm.__eq = function (t, a) return t.n == a; end;
+tm.__lt = function (t, a) return t.n < a; end;
+tm.__le = function (t, a) return t.n <= a; end;
+t = { __metatable = tm, n = 4 };
+return t == 4, t ~= 4, t < 5, t > 3, t <= 4, t >= 4 ;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Dynamic SetMember tm(
+            (System.Object)$_G,
+            (System.Object).New Neo.IronLua.LuaTable());
+        .Dynamic SetMember __eq(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __lt(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __le(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember t(
+            (System.Object)$_G,
+            (System.Object).Block(Neo.IronLua.LuaTable $#table) {
+                $#table = .New Neo.IronLua.LuaTable();
+                .Call $#table.SetMemberValue(
+                    "__metatable",
+                    .Dynamic GetMember tm((System.Object)$_G),
+                    False,
+                    False);
+                .Call $#table.SetMemberValue(
+                    "n",
+                    (System.Object)4,
+                    False,
+                    False);
+                $#table
+            });
+        .Goto #return { .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                (System.Object).Dynamic BinaryOperation Equal(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)4),
+                (System.Object).Dynamic BinaryOperation NotEqual(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)4),
+                (System.Object).Dynamic BinaryOperation LessThan(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)5),
+                (System.Object).Dynamic BinaryOperation GreaterThan(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)3),
+                (System.Object).Dynamic BinaryOperation LessThanOrEqual(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)4),
+                (System.Object).Dynamic BinaryOperation GreaterThanOrEqual(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)4)
+            }) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Equal(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation LessThan(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation LessThanOrEqual(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Boolean)True == (Boolean)True
+OK: (Boolean)False == (Boolean)False
+OK: (Boolean)True == (Boolean)True
+OK: (Boolean)True == (Boolean)True
+OK: (Boolean)True == (Boolean)True
+OK: (Boolean)True == (Boolean)True
+  Dauer: 11ms
+
+

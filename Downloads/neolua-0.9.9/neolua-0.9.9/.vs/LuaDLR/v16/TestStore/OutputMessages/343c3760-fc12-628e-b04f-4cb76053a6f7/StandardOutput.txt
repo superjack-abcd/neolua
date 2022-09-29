@@ -1,0 +1,201 @@
+Test: graph = clr.LuaDLR.Test.LuaTypeTests.Graph();
+graph.DrawLine('a', 1, 1, 1, 1);
+graph.DrawLine('b', 1, 1, 1, 1.0);
+graph.DrawLine('c', 1, 1, 1.0, 1);
+graph.DrawLine('d', 1, 1, 1.0, 1.0);
+graph.DrawLine('e', 1, 1.0, 1, 1);
+graph.DrawLine('f', 1, 1.0, 1, 1.0);
+graph.DrawLine('g', 1, 1.0, 1.0, 1);
+graph.DrawLine('h', 1, 1.0, 1.0, 1.0);
+graph.DrawLine('i', 1.0, 1, 1, 1);
+graph.DrawLine('j', 1.0, 1, 1, 1.0);
+graph.DrawLine('k', 1.0, 1, 1.0, 1);
+graph.DrawLine('l', 1.0, 1, 1.0, 1.0);
+graph.DrawLine('m', 1.0, 1.0, 1, 1);
+graph.DrawLine('n', 1.0, 1.0, 1, 1.0);
+graph.DrawLine('o', 1.0, 1.0, 1.0, 1);
+graph.DrawLine('p', 1.0, 1.0, 1.0, 1.0);
+local i1 = 1;
+local i2 = 2;
+local i3 = 3;
+local i4 = 4;
+graph.DrawLine('aa', i1, i1, i2, i1);
+graph.DrawLine('ab', i1, i2, i3, i4);
+graph.DrawLine('ac', i1, i1, i1, i1);
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block(
+        System.Object $i1,
+        System.Object $i2,
+        System.Object $i3,
+        System.Object $i4) {
+        .Dynamic SetMember graph(
+            (System.Object)$_G,
+            (.New Neo.IronLua.LuaResult(.Dynamic Invoke(.Dynamic GetMember Graph(.Dynamic GetMember LuaTypeTests(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                            )))))).Item[0]);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"a",
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"b",
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"c",
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"d",
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"e",
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"f",
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"g",
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"h",
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"i",
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"j",
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"k",
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"l",
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1D,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"m",
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"n",
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1,
+            (System.Object)1D);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"o",
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"p",
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1D,
+            (System.Object)1D);
+        $i1 = (System.Object)1;
+        $i2 = (System.Object)2;
+        $i3 = (System.Object)3;
+        $i4 = (System.Object)4;
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"aa",
+            $i1,
+            $i1,
+            $i2,
+            $i1);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"ab",
+            $i1,
+            $i2,
+            $i3,
+            $i4);
+        .Dynamic Invoke(
+            .Dynamic GetMember DrawLine(.Dynamic GetMember graph((System.Object)$_G)),
+            (System.Object)"ac",
+            $i1,
+            $i1,
+            $i1,
+            $i1);
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+DrawLine 'a' with int: 1, 1, 1, 1
+DrawLine 'b' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'c' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'd' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'e' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'f' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'g' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'h' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'i' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'j' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'k' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'l' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'm' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'n' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'o' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'p' with float: 1.0, 1.0, 1.0, 1.0
+DrawLine 'aa' with int: 1, 1, 2, 1
+DrawLine 'ab' with int: 1, 2, 3, 4
+DrawLine 'ac' with int: 1, 1, 1, 1
+OK: no result == no result
+  Dauer: 31ms
+
+

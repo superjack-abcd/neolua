@@ -1,0 +1,141 @@
+Test: tm = {}
+tm.__band = function (t, a) return t.n & a; end;
+tm.__bor = function (t, a) return t.n | a; end;
+tm.__bxor = function (t, a) return t.n ~ a; end;
+tm.__shr = function (t, a) return t.n >> a; end;
+tm.__shl = function (t, a) return t.n << a; end;
+t = { __metatable = tm, n = 4 };
+return t & 2, t | 2, t ~ 2, t >> 2, t << 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Dynamic SetMember tm(
+            (System.Object)$_G,
+            (System.Object).New Neo.IronLua.LuaTable());
+        .Dynamic SetMember __band(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __bor(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __bxor(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __shr(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __shl(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember t(
+            (System.Object)$_G,
+            (System.Object).Block(Neo.IronLua.LuaTable $#table) {
+                $#table = .New Neo.IronLua.LuaTable();
+                .Call $#table.SetMemberValue(
+                    "__metatable",
+                    .Dynamic GetMember tm((System.Object)$_G),
+                    False,
+                    False);
+                .Call $#table.SetMemberValue(
+                    "n",
+                    (System.Object)4,
+                    False,
+                    False);
+                $#table
+            });
+        .Goto #return { .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                (System.Object).Dynamic BinaryOperation And(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation Or(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation ExclusiveOr(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation RightShift(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation LeftShift(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2)
+            }) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation And(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Or(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation ExclusiveOr(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation RightShift(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation LeftShift(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)0 == (Int32)0
+OK: (Int32)6 == (Int32)6
+OK: (Int32)6 == (Int32)6
+OK: (Int32)1 == (Int32)1
+OK: (Int32)16 == (Int32)16
+  Dauer: 10ms
+
+

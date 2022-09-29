@@ -1,0 +1,98 @@
+Test: return cast(bool, 1);
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)True) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Boolean)True == (Boolean)True
+  Dauer: 0ms
+
+
+Test: return cast(bool, 0);
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)True) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Boolean)True == (Boolean)True
+  Dauer: 0ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.ReturnVoid();
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(.Dynamic GetMember ReturnVoid(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                        ))))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+ReturnVoid Called
+OK: no result == no result
+  Dauer: 2ms
+
+
+Test: return (clr.LuaDLR.Test.Expressions.ReturnVoid());
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Convert System.Object(.Dynamic Invoke(.Dynamic GetMember ReturnVoid(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                            )))))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+ReturnVoid Called
+OK: (object) == (object)
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.ReturnLua3();
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Invoke(.Dynamic GetMember ReturnLua3(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                        ))))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)3 == (Int32)3
+OK: (Int32)2 == (Int32)2
+OK: (Int32)1 == (Int32)1
+  Dauer: 2ms
+
+
+Test: return (clr.LuaDLR.Test.Expressions.ReturnLua3());
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic Convert System.Object(.Dynamic Invoke(.Dynamic GetMember ReturnLua3(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                            )))))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)3 == (Int32)3
+  Dauer: 3ms
+
+

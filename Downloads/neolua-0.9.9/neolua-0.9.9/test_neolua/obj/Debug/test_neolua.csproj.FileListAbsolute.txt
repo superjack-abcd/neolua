@@ -1,0 +1,11 @@
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\test_neolua.exe.config
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\test_neolua.exe
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\test_neolua.pdb
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\Neo.Lua.dll
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\Neo.Lua.pdb
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\Neo.Lua.xml
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\bin\Debug\de\Neo.Lua.resources.dll
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\obj\Debug\test_neolua.csproj.CoreCompileInputs.cache
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\obj\Debug\test_neolua.csproj.CopyComplete
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\obj\Debug\test_neolua.exe
+C:\Users\Jack\Downloads\neolua-0.9.9\neolua-0.9.9\test_neolua\obj\Debug\test_neolua.pdb

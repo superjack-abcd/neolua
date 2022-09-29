@@ -1,0 +1,102 @@
+Test: local t = {1, 2, 3, [8] = 8};
+return table.remove(t, 1), #t;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block(System.Object $t) {
+        $t = .Dynamic Convert System.Object((System.Object).Block(Neo.IronLua.LuaTable $#table) {
+                $#table = .New Neo.IronLua.LuaTable();
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(1),
+                    (System.Object)1,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(2),
+                    (System.Object)2,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(3),
+                    (System.Object)3,
+                    False);
+                .Call $#table.SetArrayValue(
+                    8,
+                    (System.Object)8,
+                    False);
+                $#table
+            });
+        .Goto #return { .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                (System.Object).New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember remove(.Dynamic GetMember table((System.Object)$_G)),
+                        $t,
+                        (System.Object)1)),
+                (System.Object).Call Neo.IronLua.Lua.RtLength($t)
+            }) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)1 == (Int32)1
+OK: (Int32)2 == (Int32)2
+  Dauer: 2ms
+
+
+Test: local t = {1, 2, 3, 4, 5, 6, 7, 8};
+return table.remove(t, 1), #t;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block(System.Object $t) {
+        $t = .Dynamic Convert System.Object((System.Object).Block(Neo.IronLua.LuaTable $#table) {
+                $#table = .New Neo.IronLua.LuaTable();
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(1),
+                    (System.Object)1,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(2),
+                    (System.Object)2,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(3),
+                    (System.Object)3,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(4),
+                    (System.Object)4,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(5),
+                    (System.Object)5,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(6),
+                    (System.Object)6,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(7),
+                    (System.Object)7,
+                    False);
+                .Call $#table.SetValue(
+                    .Constant<System.Object>(8),
+                    (System.Object)8,
+                    False);
+                $#table
+            });
+        .Goto #return { .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                (System.Object).New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember remove(.Dynamic GetMember table((System.Object)$_G)),
+                        $t,
+                        (System.Object)1)),
+                (System.Object).Call Neo.IronLua.Lua.RtLength($t)
+            }) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)1 == (Int32)1
+OK: (Int32)7 == (Int32)7
+  Dauer: 2ms
+
+

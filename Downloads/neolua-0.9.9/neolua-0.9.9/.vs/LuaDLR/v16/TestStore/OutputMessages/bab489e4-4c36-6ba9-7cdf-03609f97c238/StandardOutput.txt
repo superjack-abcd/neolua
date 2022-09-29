@@ -1,0 +1,127 @@
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Int32,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Int32 $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)($a / $b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)5 == (Int32)5
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Double,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)$a / (System.Int64)$b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)2 == (Int64)2
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Double,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)$a & (System.Int64)$b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)2 == (Int64)2
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Double,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)$a | (System.Int64)$b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)3 == (Int64)3
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Double,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)$a ^ (System.Int64)$b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)1 == (Int64)1
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Double,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)$a << $b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)256 == (Int64)256
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Double,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)$a >> $b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)1 == (Int64)1
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Object,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Object $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation ExclusiveOr(
+                $a,
+                (System.Object)$b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)1 == (Int64)1
+OK: (Int64)1 == (Int64)1
+OK: (Int32)1 == (Int32)1
+OK: (Int32)1 == (Int32)1
+.Lambda dummy<System.Func`4[Neo.IronLua.LuaTable,System.Object,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Object $a,
+    System.Int32 $b) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation ExclusiveOr(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke($a))).Item[0],
+                (System.Object)$b)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)1 == (Int64)1
+  operator^ TestOperator,int
+OK: (TestOperator)1 == (TestOperator)1
+OK: (Int32)1 == (Int32)1

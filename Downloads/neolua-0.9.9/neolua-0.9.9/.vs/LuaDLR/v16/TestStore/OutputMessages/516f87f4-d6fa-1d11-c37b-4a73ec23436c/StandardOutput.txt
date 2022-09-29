@@ -1,0 +1,162 @@
+Test: tm = {}
+tm.__add = function (t, a) return t.n + a; end;
+tm.__sub = function (t, a) return t.n - a; end;
+tm.__mul = function (t, a) return t.n * a; end;
+tm.__div = function (t, a) return t.n / a; end;
+tm.__idiv = function (t, a) return t.n // a; end;
+tm.__pow = function (t, a) return t.n ^ a; end;
+t = { __metatable = tm, n = 4 };
+return t + 2, t - 2, t * 2, t / 2, t // 3, t ^ 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Dynamic SetMember tm(
+            (System.Object)$_G,
+            (System.Object).New Neo.IronLua.LuaTable());
+        .Dynamic SetMember __add(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __sub(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __mul(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __div(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __idiv(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember __pow(
+            .Dynamic GetMember tm((System.Object)$_G),
+            (System.Object).Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>);
+        .Dynamic SetMember t(
+            (System.Object)$_G,
+            (System.Object).Block(Neo.IronLua.LuaTable $#table) {
+                $#table = .New Neo.IronLua.LuaTable();
+                .Call $#table.SetMemberValue(
+                    "__metatable",
+                    .Dynamic GetMember tm((System.Object)$_G),
+                    False,
+                    False);
+                .Call $#table.SetMemberValue(
+                    "n",
+                    (System.Object)4,
+                    False,
+                    False);
+                $#table
+            });
+        .Goto #return { .New Neo.IronLua.LuaResult(.NewArray System.Object[] {
+                (System.Object).Dynamic BinaryOperation Add(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation Subtract(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation Multiply(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation Divide(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2),
+                (System.Object).Dynamic BinaryOperation Divide(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)3),
+                (System.Object).Dynamic BinaryOperation Power(
+                    .Dynamic GetMember t((System.Object)$_G),
+                    (System.Object)2)
+            }) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Add(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Subtract(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Multiply(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Divide(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Divide(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+
+.Lambda lambda<System.Func`3[System.Object,System.Object,Neo.IronLua.LuaResult]>(
+    System.Object $t,
+    System.Object $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Power(
+                .Dynamic GetMember n($t),
+                $a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)6 == (Int32)6
+OK: (Int32)2 == (Int32)2
+OK: (Int32)8 == (Int32)8
+OK: (Double)2 == (Double)2
+OK: (Int32)1 == (Int32)1
+OK: (Double)16 == (Double)16
+  Dauer: 12ms
+
+

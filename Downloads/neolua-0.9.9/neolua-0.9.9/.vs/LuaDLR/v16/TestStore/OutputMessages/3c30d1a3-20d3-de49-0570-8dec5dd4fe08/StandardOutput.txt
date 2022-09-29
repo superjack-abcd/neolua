@@ -1,0 +1,124 @@
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Int32 $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(-$a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)-2 == (Int32)-2
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,System.Double,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(-$a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Double)-2.1 == (Double)-2.1
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,LuaDLR.Test.Expressions+TestOperator,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    LuaDLR.Test.Expressions+TestOperator $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(-$a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator- TestOperator
+OK: (TestOperator)-2 == (TestOperator)-2
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,LuaDLR.Test.Expressions+TestOperator2,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    LuaDLR.Test.Expressions+TestOperator2 $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(-((System.Int32)$a))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  implicit int (TestOperator2)
+OK: (Int32)-2 == (Int32)-2
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,LuaDLR.Test.Expressions+ShortEnum,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    LuaDLR.Test.Expressions+ShortEnum $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((LuaDLR.Test.Expressions+ShortEnum)(-((System.Int16)$a)))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (ShortEnum)-2 == (ShortEnum)-2
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,System.Int32,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Int32 $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(~$a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)-3 == (Int32)-3
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,System.Double,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    System.Double $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(~((System.Int64)$a))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)-3 == (Int64)-3
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,LuaDLR.Test.Expressions+TestOperator,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    LuaDLR.Test.Expressions+TestOperator $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(~$a)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator~ TestOperator
+OK: (TestOperator)-3 == (TestOperator)-3
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,LuaDLR.Test.Expressions+TestOperator2,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    LuaDLR.Test.Expressions+TestOperator2 $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(~((System.Int32)$a))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  implicit int (TestOperator2)
+OK: (Int32)-3 == (Int32)-3
+.Lambda dummy<System.Func`3[Neo.IronLua.LuaTable,LuaDLR.Test.Expressions+ShortEnum,Neo.IronLua.LuaResult]>(
+    Neo.IronLua.LuaTable $_G,
+    LuaDLR.Test.Expressions+ShortEnum $a) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((LuaDLR.Test.Expressions+ShortEnum)(~((System.Int16)$a)))) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (ShortEnum)-3 == (ShortEnum)-3

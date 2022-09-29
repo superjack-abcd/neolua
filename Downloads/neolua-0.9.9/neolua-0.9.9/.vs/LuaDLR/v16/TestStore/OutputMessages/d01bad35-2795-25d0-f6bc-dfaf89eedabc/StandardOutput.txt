@@ -1,0 +1,450 @@
+Test: return 2 - 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(2 - 3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)-1 == (Int32)-1
+  Dauer: 0ms
+
+
+Test: return 2 * 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(2 * 3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)6 == (Int32)6
+  Dauer: 0ms
+
+
+Test: return 15 / 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Double)15 / (System.Double)3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Double)5 == (Double)5
+  Dauer: 0ms
+
+
+Test: return 15 // 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(15 / 3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)5 == (Int32)5
+  Dauer: 0ms
+
+
+Test: return 5 / 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Double)5 / (System.Double)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Double)2.5 == (Double)2.5
+  Dauer: 0ms
+
+
+Test: return 5 // 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(5 / 2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)2 == (Int32)2
+  Dauer: 0ms
+
+
+Test: return 5.2 // 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)5.2D / (System.Int64)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)2 == (Int64)2
+  Dauer: 0ms
+
+
+Test: return 5 % 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(5 % 2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)1 == (Int32)1
+  Dauer: 0ms
+
+
+Test: return 5.2 % 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(5.2D % (System.Double)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Double)1.2 == (Double)1.2
+  Dauer: 0ms
+
+
+Test: return 2 ^ 0.5;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Double)2) ** 0.5D) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Double)1.414 == (Double)1.414
+  Dauer: 0ms
+
+
+Test: return 3 & 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(3 & 2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)2 == (Int32)2
+  Dauer: 0ms
+
+
+Test: return 2 | 1;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(2 | 1)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)3 == (Int32)3
+  Dauer: 0ms
+
+
+Test: return 3 ~ 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(3 ^ 2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)1 == (Int32)1
+  Dauer: 0ms
+
+
+Test: return 1 << 8;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(1 << 8)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)256 == (Int32)256
+  Dauer: 0ms
+
+
+Test: return 256 >> 8;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)(256 >> 8)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int32)1 == (Int32)1
+  Dauer: 0ms
+
+
+Test: return 3.2 ~ 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult((System.Object)((System.Int64)3.2D ^ (System.Int64)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+OK: (Int64)1 == (Int64)1
+  Dauer: 0ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(2) + 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Add(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)2))).Item[0],
+                (System.Object)3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator+ TestOperator,int
+OK: (TestOperator)5 == (TestOperator)5
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(2) - 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Subtract(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)2))).Item[0],
+                (System.Object)3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator- TestOperator,int
+OK: (TestOperator)-1 == (TestOperator)-1
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(2) * 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Multiply(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)2))).Item[0],
+                (System.Object)3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator* TestOperator,int
+OK: (TestOperator)6 == (TestOperator)6
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(6) / 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Divide(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)6))).Item[0],
+                (System.Object)3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator/ TestOperator,int
+OK: (TestOperator)2 == (TestOperator)2
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(6) // 3;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Divide(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)6))).Item[0],
+                (System.Object)3)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator/ TestOperator,int
+OK: (TestOperator)2 == (TestOperator)2
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(3) & 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation And(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)3))).Item[0],
+                (System.Object)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator& TestOperator,int
+OK: (TestOperator)2 == (TestOperator)2
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(2) | 1;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation Or(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)2))).Item[0],
+                (System.Object)1)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator| TestOperator,int
+OK: (TestOperator)3 == (TestOperator)3
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(3) ~ 2;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation ExclusiveOr(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)3))).Item[0],
+                (System.Object)2)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator^ TestOperator,int
+OK: (TestOperator)1 == (TestOperator)1
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(1) << 8;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation LeftShift(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)1))).Item[0],
+                (System.Object)8)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator<< TestOperator,int
+OK: (TestOperator)256 == (TestOperator)256
+  Dauer: 3ms
+
+
+Test: return clr.LuaDLR.Test.Expressions.TestOperator(256) >> 8;
+==================================================================
+.Lambda test<System.Func`2[Neo.IronLua.LuaTable,Neo.IronLua.LuaResult]>(Neo.IronLua.LuaTable $_G) {
+    .Block() {
+        .Goto #return { .New Neo.IronLua.LuaResult(.Dynamic BinaryOperation RightShift(
+                (.New Neo.IronLua.LuaResult(.Dynamic Invoke(
+                        .Dynamic GetMember TestOperator(.Dynamic GetMember Expressions(.Dynamic GetMember Test(.Dynamic GetMember LuaDLR((System.Object)Neo.IronLua.LuaType.Clr)
+                                ))),
+                        (System.Object)256))).Item[0],
+                (System.Object)8)) };
+        .Label
+            Neo.IronLua.LuaResult.Empty
+        .LabelTarget #return:
+    }
+}
+===============================================================================
+  operator>> TestOperator,int
+OK: (TestOperator)1 == (TestOperator)1
+  Dauer: 3ms
+
+
